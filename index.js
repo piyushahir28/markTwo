@@ -2,12 +2,12 @@
 const chalk = require('chalk');
 var read = require("readline-sync");
 
-var rightAns = chalk.greenBright;
-var wrongAns = chalk.redBright;
-var sColor = chalk.yellowBright;
-var hColor = chalk.hex('#DEADED');
+var rightAns = chalk.bold.greenBright;
+var wrongAns = chalk.bold.redBright;
+var sColor = chalk.bold.yellowBright;
+var hColor = chalk.hex('#DEADED').bold;
 
-console.log(hColor("Let's see how well you know PIYUSH ❤️ \n"));
+console.log(hColor("Let's see how big fan you are of Money Heist ❤️ \n"));
 var userName = read.question("Namaste \nPlease enter your name? ");
 console.log(hColor("\nWelcome, "+userName+", to the world of Money Heist Fans"));
 console.log(chalk.black.bold.bgWhite("\nNOTE: For each correct answer you will get 1 point.\n"));
@@ -27,11 +27,11 @@ function askQuestions(ques, ans){
 
   console.log(sColor("Current Score : "+score));
   if(score>=5 && l2<1){
-    console.log(chalk.black.bold.bgWhite("Level 2 Started...."));
+    console.log(chalk.black.bold.bgWhite("\nLevel 2 Started...."));
     l2++;
   }
   if(score>=10 && l3<1){
-    console.log(chalk.black.bold.bgWhite("Level 3 Started...."));
+    console.log(chalk.black.bold.bgWhite("\nLsevel 3 Started...."));
     l3++;
   }
   console.log("-------------------");
@@ -71,9 +71,9 @@ for(var i=0; i<questions.length; i++){
   askQuestions(q.question, q.answer);
 }
 
-console.log("Yay! You scored : " + score);
+console.log(chalk.bold.italic("Yay! You scored : " + score + "Points"));
 console.log("-------------------");
-console.log("Thanks for playing, Have a nice day...");
+console.log(hColor("Thanks for playing, Have a nice day..."));
 console.log("-------------------");
 
 //repel link - https://replit.com/@piyushahir28/markTwo
