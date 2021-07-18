@@ -1,60 +1,68 @@
-//Money Heist
-
-//How well you know me?
+//Money Heist Quiz
+const chalk = require('chalk');
 var read = require("readline-sync");
-var userName = read.question("What's your name? ");
-console.log("Welcome, "+userName+" to world of Money Heist Fans? ");
-console.log("-------------------");
+
+var rightAns = chalk.greenBright;
+var wrongAns = chalk.redBright;
+var sColor = chalk.yellowBright;
+var hColor = chalk.hex('#DEADED');
+
+console.log(hColor("Let's see how well you know PIYUSH ❤️ \n"));
+var userName = read.question("Namaste \nPlease enter your name? ");
+console.log(hColor("\nWelcome, "+userName+", to the world of Money Heist Fans"));
+console.log(chalk.black.bold.bgWhite("\nNOTE: For each correct answer you will get 1 point.\n"));
+
 
 var score = 0;
 var l2=0,l3=0;
+
 function askQuestions(ques, ans){
   var userAns = read.question(ques);
   if(userAns.toLowerCase()==ans.toLowerCase()){
-    console.log("You're right! " + userName);
+    console.log(rightAns("\nYou're right :)"));
     score++;
   }else{
-    console.log("Oops! You're wrong! " + userName);
+    console.log(wrongAns("\nOops! You're wrong :("));
   }
 
-  console.log("Score : "+score);
+  console.log(sColor("Current Score : "+score));
   if(score>=5 && l2<1){
-    console.log("Level 2 Started....");
+    console.log(chalk.black.bold.bgWhite("Level 2 Started...."));
     l2++;
   }
   if(score>=10 && l3<1){
-    console.log("Level 3 Started....");
+    console.log(chalk.black.bold.bgWhite("Level 3 Started...."));
     l3++;
   }
   console.log("-------------------");
 }
 
 var questions = [{
-  question : "The heist was the brainchild of the...........?",
+  question : "The heist was the brainchild of the...........?\n",
   answer : "Professor"
 }, {
-  question : "The show is actually called La Casa de Papel, which literally translates to ____.  ",
+  question : "The show is actually called La Casa de Papel, which literally translates to ____\n",
   answer : "Paper House"
 }, {
-  question : "In which country does Raquel track the Professor after the first heist? ",
+  question : "In which country does Raquel track the Professor after the first heist? \n",
   answer : "Philippines"
 }, {
-  question : "How much money does the gang steal from the heist at Royal Mint of Spain? ",
+  question : "How much money does the gang steal from the heist at Royal Mint of Spain? \n",
   answer : "984 Million"
 }, {
-  question : "What is the real name of The Professor in Money Heist? ",
+  question : "What is the real name of The Professor in Money Heist? \n",
   answer : "Sergio"
 }, {
-  question : "What's the name of Berlin’s ladylove in the show, who comes to visit him at the monastery? ",
+  question : "What's the name of Berlin’s ladylove in the show, who comes to visit him at the monastery? \n",
   answer : "Tatiana"
 }, {
-  question : "How many heists had the character Berlin performed before money heist's events? ",
+  question : "How many heists had the character Berlin performed before money heist's events? \n",
   answer : "27"
 }, {
-  question : "What is the real name of Tokyo in Money Heist? ",
+  question : "What is the real name of Tokyo in Money Heist? \n",
   answer : "Silene Oliveira"
 }, {
-  question : "Rio was known for committing which crime before his heist days? ",
+  question : "Rio was known for committing which crime before his heist days? \n",
   answer : "Computer hacking"
 }];
 
